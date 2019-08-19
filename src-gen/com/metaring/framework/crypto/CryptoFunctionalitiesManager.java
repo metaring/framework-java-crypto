@@ -9,9 +9,9 @@ import java.lang.String;
 
 public class CryptoFunctionalitiesManager extends FunctionalitiesManager implements GeneratedFunctionalitiesManager {
 
-    public static final FunctionalityInfo DECRYPT = FunctionalityInfo.create("com.metaring.framework.crypto.decrypt", true, false, false, "java.lang.String", "java.lang.String");
+    public static final FunctionalityInfo DECRYPT = DecryptFunctionality.INFO;
 
-    public static final FunctionalityInfo ENCRYPT = FunctionalityInfo.create("com.metaring.framework.crypto.encrypt", true, false, false, "java.lang.String", "java.lang.String");
+    public static final FunctionalityInfo ENCRYPT = EncryptFunctionality.INFO;
 
     public static final CompletableFuture<String> decrypt(String string) {
         return call(DECRYPT, DecryptFunctionality.class, getCallingFunctionality(), string, result -> result.asText());
